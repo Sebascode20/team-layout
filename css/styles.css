@@ -6,6 +6,11 @@
   --title-header-color: #000000;
   --text-header-color: #394150;
   --footer-card-link-color: #c1b6f8;
+  --liam-bg-color: #c1b6f8;
+  --sophia-bg-color: #edacd2;
+  --ethan-bg-color: #9dc4f8;
+  --isabella-bg-color: #f8d8b0;
+  --noah-bg-color: #86e7d4;
 }
 
 * {
@@ -17,24 +22,31 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;  
+  align-items: center;
   min-height: 100dvh;
   min-height: 100vh;
   font-family: var(--main-font);
+  font-size: 1rem;
   font-weight: 400;
 }
 
 img {
   max-inline-size: 100%;
   block-size: auto;
+  object-fit: cover;
+}
+
+main {
+  flex: 1;
 }
 
 .main-content {
   display: grid;
-  grid-template-rows: repeat(2, 40vh);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, auto);
-  max-width: 1000px;
+  max-width: 1050px;
+  margin-block: 2.5rem;
+  border-radius: 22px;
 }
 
 .main-content span {
@@ -51,12 +63,64 @@ img {
 }
 
 .main-content__header {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+  background-image: url("../resources/Background_decor.svg");
+  background-repeat: no-repeat;
   background-color: var(--header-card-bg-color);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
-.main-content__members {
-  display: flex;
-  align-items: baseline;
+.main-content__header > * {
+  margin-block: 1rem;
+}
+
+.main-content__header h1 {
+  font-size: 2.5rem;
+}
+
+.main-content__header,
+.main-content__footer {
+  padding: 1.5rem;
+}
+
+.main-content__liam {
+  background-color: var(--liam-bg-color);
+}
+
+.main-content__sophia {
+  border-top-right-radius: 25px;
+  background-color: var(--sophia-bg-color);
+}
+
+.main-content__ethan {
+  grid-row: 2;
+  grid-column: 2 / 3;
+  background-color: var(--ethan-bg-color);
+}
+
+.main-content__isabella {
+  background-color: var(--isabella-bg-color);
+}
+
+.main-content__noah {
+  border-bottom-right-radius: 25px;
+  background-color: var(--noah-bg-color);
+}
+
+.main-content__footer {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: flex-end;
+}
+
+.main-content__footer a {
+  font-weight: 500;
+}
+
+.main-content__footer img {
+  vertical-align: middle;
 }
 
 .footer {
@@ -66,6 +130,7 @@ img {
   color: rgb(55, 65, 81);
 }
 
-.footer a {
+.footer a,
+.main-content__footer a {
   text-decoration: none;
 }
