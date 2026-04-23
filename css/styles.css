@@ -30,6 +30,12 @@ body {
   font-weight: 400;
 }
 
+h2 {
+  color: var(--people-names-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 img {
   max-inline-size: 100%;
   block-size: auto;
@@ -42,10 +48,11 @@ main {
 
 .main-content {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(4, auto);
-  max-width: 1050px;
-  margin-block: 2.5rem;
+  grid-template-rows: repeat(2, 290px);
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin-top: 1rem;
+  margin-bottom: 0;
   border-radius: 22px;
 }
 
@@ -55,11 +62,29 @@ main {
 
 .main-content h1 {
   color: var(--title-card-color);
+  font-weight: 500;
+}
+
+.main-content p {
+  margin-right: 1rem;
 }
 
 .main-content p,
 .main-content__footer a {
   color: var(--text-header-color);
+}
+
+.main-content article {
+  position: relative;
+}
+
+.main-content__liam img,
+.main-content__sophia img,
+.main-content__ethan img,
+.main-content__isabella img,
+.main-content__noah img {
+  position: absolute;
+  bottom: 0;
 }
 
 .main-content__header {
@@ -80,9 +105,8 @@ main {
   font-size: 2.5rem;
 }
 
-.main-content__header,
-.main-content__footer {
-  padding: 1.5rem;
+.main-content__header {
+  padding: 1.9rem 5rem 2rem 1.5rem;
 }
 
 .main-content__liam {
@@ -113,6 +137,8 @@ main {
   grid-row: 2;
   grid-column: 1;
   align-self: flex-end;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .main-content__footer a {
@@ -121,6 +147,25 @@ main {
 
 .main-content__footer img {
   vertical-align: middle;
+}
+
+[class$="info"] {
+  position: relative;
+  top: 200px;
+  margin: 1.5rem;
+  z-index: 3;
+}
+
+[class$="info"] p {
+  color: var(--people-names-color);
+  font-weight: 400;
+}
+
+img[src="./resources/Gradient.svg"] {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
 }
 
 .footer {
@@ -133,4 +178,17 @@ main {
 .footer a,
 .main-content__footer a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 64rem) {
+  .main-content {
+    grid-template-rows: repeat(3, 290px);
+    grid-template-columns: repeat(3, 1fr);
+    margin-inline: 2rem;
+  }
+
+  .main-content__header {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+  }
 }
