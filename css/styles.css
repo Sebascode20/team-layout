@@ -66,6 +66,7 @@ main {
 }
 
 .main-content p {
+  max-width: 430px;
   margin-right: 1rem;
 }
 
@@ -187,8 +188,49 @@ img[src="./resources/Gradient.svg"] {
     margin-inline: 2rem;
   }
 
+  .main-content p {
+    max-width: 461px;
+  }
+
   .main-content__header {
-    grid-row: 1;
+    grid-row: 1 / span 4;
     grid-column: 1 / span 4;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .main-content__liam {
+    grid-row: 2;
+    grid-column: 1 / 2;
+  }
+
+  .main-content__sophia {
+    grid-row: 2;
+    grid-column: 2 / 3;
+    border-top-right-radius: 0;
+  }
+
+  .main-content__ethan {
+    grid-row: 2;
+    grid-column: 3 / 4;
+  }
+
+  .main-content__isabella {
+    grid-row: 3;
+    grid-column: -3 / -2;
+  }
+
+  .main-content__noah {
+    grid-row: 3;
+    grid-column: -2 / -1;
+  }
+
+  .main-content__noah img {
+    border-bottom-right-radius: 25px;
+  }
+
+  .main-content__footer {
+    grid-row: 3;
   }
 }
