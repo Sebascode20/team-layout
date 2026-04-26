@@ -76,6 +76,9 @@ main {
 }
 
 .main-content article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   position: relative;
 }
 
@@ -134,6 +137,10 @@ main {
   background-color: var(--noah-bg-color);
 }
 
+.main-content__noah img {
+  border-bottom-right-radius: 25px;
+}
+
 .main-content__footer {
   grid-row: 2;
   grid-column: 1;
@@ -151,10 +158,8 @@ main {
 }
 
 [class$="info"] {
-  position: relative;
-  top: 200px;
-  margin: 1.5rem;
-  z-index: 3;
+  z-index: 1000;
+  padding: 0 0 1rem 1rem;
 }
 
 [class$="info"] p {
@@ -226,11 +231,71 @@ img[src="./resources/Gradient.svg"] {
     grid-column: -2 / -1;
   }
 
-  .main-content__noah img {
+  .main-content__footer {
+    grid-row: 3;
+  }
+
+  [class$="info"] p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 31.25rem) {
+  .main-content {
+    grid-template-rows: repeat(7, minmax(350px, 1fr));
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+    margin-inline: 1rem;
+  }
+
+  .main-content__header {
+    grid-row: 1 / span 7;
     border-bottom-right-radius: 25px;
   }
 
-  .main-content__footer {
+  .main-content p {
+    margin-right: initial;
+  }
+
+  .main-content__liam,
+  .main-content__sophia,
+  .main-content__ethan,
+  .main-content__isabella,
+  .main-content__noah {
+    grid-column: 1 / span 3;
+  }
+
+  .main-content__liam {
+    grid-row: 2;
+  }
+
+  .main-content__sophia {
     grid-row: 3;
+  }
+
+  .main-content__ethan {
+    grid-row: 4;
+  }
+
+  .main-content__isabella {
+    grid-row: 5;
+  }
+
+  .main-content__noah {
+    grid-row: 6;
+    border-bottom-right-radius: initial;
+  }
+
+  .main-content__noah img {
+    border-bottom-right-radius: initial;
+  }
+
+  .main-content__footer {
+    grid-row: 7;
+  }
+
+  [class$="info"] > * {
+    font-size: 15px;
   }
 }
